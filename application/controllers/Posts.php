@@ -28,6 +28,8 @@ class Posts extends CI_Controller{
 
         $data['title'] = 'Create Post';
 
+        $data['categories'] = $this->post_model->get_categories();
+
         $this->form_validation->set_rules('title','Title','required');
         $this->form_validation->set_rules('body','Body','required');
 
@@ -56,6 +58,8 @@ class Posts extends CI_Controller{
         }
 
         $data['title'] = 'Edit Post';
+
+        $data['categories'] = $this->post_model->get_categories();
 
         $this->load->view('templates/header');
         $this->load->view('posts/edit',$data);
