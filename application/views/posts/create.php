@@ -2,7 +2,7 @@
 
 <?= validation_errors() ?>
 
-<?= form_open('posts/create') ?>
+<?= form_open_multipart('posts/create') ?>
 <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input type="text" class="form-control" name="title" id="title" placeholder="Add Title">
@@ -18,6 +18,10 @@
 		<option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
 		<?php endforeach; ?>
 	</select>
+  </div>
+  <div class="mb-3">
+    <label for="postimage" class="form-label">Upload Image</label>
+    <input type="file" class="form-control" id="postimage" name="userfile" size="20">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
