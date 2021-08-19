@@ -7,7 +7,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <div class="container">
+        <div class="container-fluid mx-3">
             <a class="navbar-brand" href="<?= base_url(); ?>">ciBlog</a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,12 +22,18 @@
                 <a class="nav-link" href="<?= base_url(); ?>posts">Posts</a>
                 </li>
                 <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>categories">Categories</a>
+                </li>
+                <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>about">About</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>posts/create">Create Post</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>categories/create">Create Category</a>
                 </li>
             </ul>
             </div>
