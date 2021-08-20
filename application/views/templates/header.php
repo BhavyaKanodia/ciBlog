@@ -31,24 +31,18 @@
             <ul class="navbar-nav ms-auto me-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                        User
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="<?= base_url(); ?>users/login">Login</a></li>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>users/register">Register</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>posts/create">Create Post</a></li>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>categories/create">Create Category</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="<?= base_url(); ?>users/logout">Logout</a></li>
                     </ul>
                 </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>users/register">Register</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>posts/create">Create Post</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>categories/create">Create Category</a>
-                </li> -->
             </ul>
             </div>
         </div>
@@ -58,6 +52,18 @@
             <!-- Flash message -->
             <?php if($this->session->flashdata('user_registered')): ?>
                 <p class="alert alert-success"><?= $this->session->flashdata('user_registered') ?></p>
+            <?php endif ?>
+
+            <?php if($this->session->flashdata('user_loggedin')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('user_loggedin') ?></p>
+            <?php endif ?>
+            
+            <?php if($this->session->flashdata('user_loggedout')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('user_loggedout') ?></p>
+            <?php endif ?>
+
+            <?php if($this->session->flashdata('login_failed')): ?>
+                <p class="alert alert-danger"><?= $this->session->flashdata('login_failed') ?></p>
             <?php endif ?>
             
             <?php if($this->session->flashdata('post_created')): ?>
