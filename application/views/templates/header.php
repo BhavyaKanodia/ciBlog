@@ -34,13 +34,16 @@
                         User
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <?php if(!$this->session->userdata('logged_in')): ?>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>users/login">Login</a></li>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>users/register">Register</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <?php endif; ?>
+                        <?php if($this->session->userdata('logged_in')): ?>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>posts/create">Create Post</a></li>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>categories/create">Create Category</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="<?= base_url(); ?>users/logout">Logout</a></li>
+                        <?php endif; ?>
                     </ul>
                 </li>
             </ul>
