@@ -417,7 +417,10 @@ class CI_Session {
 				}
 				// Hacky, but 'old' will (implicitly) always be less than time() ;)
 				// DO NOT move this above the 'new' check!
-				elseif ($value < $current_time)
+
+				// Flash message not going away fix
+				// https://github.com/bcit-ci/CodeIgniter/commit/119ebee192980b151d853bdc413d14a3760462ae
+				elseif ($value === 'old' || $value < $current_time)
 				{
 					unset($_SESSION[$key], $_SESSION['__ci_vars'][$key]);
 				}

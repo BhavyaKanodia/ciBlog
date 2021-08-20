@@ -28,16 +28,50 @@
                 <a class="nav-link" href="<?= base_url(); ?>about">About</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto me-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="<?= base_url(); ?>users/register">Register</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="<?= base_url(); ?>posts/create">Create Post</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url(); ?>categories/create">Create Category</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>users/register">Register</a>
+                </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>posts/create">Create Post</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>categories/create">Create Category</a>
-                </li>
+                </li> -->
             </ul>
             </div>
         </div>
         </nav>
 
         <div class="container mt-5">
+            <!-- Flash message -->
+            <?php if($this->session->flashdata('user_registered')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('user_registered') ?></p>
+            <?php endif ?>
+            
+            <?php if($this->session->flashdata('post_created')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('post_created') ?></p>
+            <?php endif ?>
+
+            <?php if($this->session->flashdata('post_updated')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('post_updated') ?></p>
+            <?php endif ?>
+            
+            <?php if($this->session->flashdata('post_deleted')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('post_deleted') ?></p>
+            <?php endif ?>
+
+            <?php if($this->session->flashdata('catgeory_created')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('catgeory_created') ?></p>
+            <?php endif ?>
